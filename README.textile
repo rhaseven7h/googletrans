@@ -1,19 +1,19 @@
 h1. GoogleTranslator and gt
 
-This is a simple implementation of Google Translation Service API,
+This is a simple implementation of Google Translation Services API,
 as a class and a command line program.
 
-h3. GoogleTranslator
+h3. GoogleTranslator Class
 
-Is the library that connects to google translation
+It's the library that connects to google translation
 service API, and retrieves translations.
 
 h3. gt
 
-Is a command line utility that translates the text
+It's a command line utility that translates the text
 parameters from and to the specified languages.
 
-h3. gt Usage
+h3. Command Line Program gt Usage
 
 Usage is as follows:
 
@@ -26,7 +26,7 @@ Usage is as follows:
 </code>
 </pre>
 
-h3. GoogleTranslator Cass Usage
+h3. GoogleTranslator Class Usage
 
 Usage is extremely simple, just instantiate specifying "from" and "to" languages
 (they default to english to spanish), and call the translate method. 
