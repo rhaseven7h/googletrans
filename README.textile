@@ -1,0 +1,42 @@
+h1. googletrans and gt
+
+This is a simple implementation of Google Translation Service API.
+As a class and a command line program.
+
+h2. googletrans
+
+Is the library that connects to google tranlation service API, and retrieves translations.
+
+h2. gt
+
+Is a command line utility that translates the text parameters from and to the specified languages.
+
+h2. gt Usage
+
+Usage is as follows:
+
+<pre>
+<code>
+  Usage: gt [options]
+      -f, --from                       Origin language
+      -t, --to                         Target language
+      -h, --help                       Show this message
+</code>
+</pre>
+
+h2. GoogleTranslator Cass Usage
+
+Usage is extremely simple, just instantiate specifying "from" and "to" languages (they default to english to spanish),
+and call the translate method. 
+
+<pre>
+  <code>
+    # GoogleTranslator.new(language_from, language_to)
+    t = GoogleTranslator.new('es', 'it')
+    
+    # GoogleTranslator#translate(query_text)
+    puts t.translate('Hola Mundo')
+    
+    # => Ciao a tutti!
+  </code>
+</pre>
