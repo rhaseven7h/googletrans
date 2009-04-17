@@ -1,0 +1,45 @@
+#!/usr/bin/env ruby
+
+require 'optparse'
+require 'googletrans'
+
+options={ :from => 'en', :to => 'es' }
+usage = ''
+begin
+  OptionParser.new do |opts|
+    usage = opts
+    opts.banner = 'Usage: gt [options]'
+    opts.on('-f', '--from ', 'Origin language') do |f|
+      options[:from] = f.strip.downcase if f
+    end
+    opts.on('-t', '--to ', 'Target language') do |t|
+      options[:to]   = t.strip.downcase if t
+    end
+    opts.on_tail("-h", "--help", "Show this message") do
+      puts opts
+      exit
+    end
+  end.parse!
+rescue Exception => e
+  STDERR.puts
+  STDERR.puts e.message
+  STDERR.puts
+  STDERR.puts usage
+  STDERR.puts
+end
+
+if ARGV.size > 0
+  begin
+    t = GoogleTranslator.new(options[:from], options[:to])
+    STDOUT.puts t.translate(ARGV.join(' '))
+  rescue Exception => e
+    STDERR.puts
+    STDERR.puts "#{e.class.to_s} - #{e.message}"
+    STDERR.puts
+  end
+else
+  STDERR.puts
+  STDERR.puts usage
+  STDERR.puts
+end
+
