@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'optparse'
-require File.join(File.dirname(__FILE__), 'googletrans')
+require '/var/lib/googletrans/googletrans'
 
 options={ :from => 'en', :to => 'es' }
 usage = ''
