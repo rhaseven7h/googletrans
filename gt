@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'optparse'
-require 'googletrans'
+require File.join(File.dirname(__FILE__), 'googletrans')
 
 options={ :from => 'en', :to => 'es' }
 usage = ''
@@ -42,4 +42,5 @@ else
   STDERR.puts usage
   STDERR.puts
 end
+
 
